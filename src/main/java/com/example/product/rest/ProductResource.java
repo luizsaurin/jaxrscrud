@@ -21,8 +21,15 @@ import jakarta.ws.rs.core.MediaType;
 @Consumes(MediaType.APPLICATION_JSON)
 public class ProductResource {
 
+	private ProductService service;
+
+    public ProductResource() {
+	}
+
 	@Inject
-	ProductService service;
+    public ProductResource(ProductService service) {
+        this.service = service;
+    }
 
 	@GET
 	public List<Product> getAll() {
