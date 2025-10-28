@@ -4,7 +4,11 @@ This is a simple JAX-RS application a made for learning porpuses. It performs CR
 
 ### Database
 
-Since this application uses Postgres database, there is a `docker-compose.yml` provided in the root directory of this project. Run it before moving to the next step.
+Since this application uses Postgres database, there is a `docker-compose.yml` provided in the root directory of this project. Run it and create the database:
+
+```sql
+CREATE DATABASE productdb;
+```
 
 ### Build
 
@@ -28,12 +32,12 @@ Navigate to the root directory of your wildfly server installation. Enter the `/
 
 ### List all products
 
-```json
+```
 curl --location 'http://localhost:8080/jaxrscrud/api/products'
 ```
 
 ### Create new product
-```json
+```
 curl --location 'http://localhost:8080/jaxrscrud/api/products' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -44,7 +48,7 @@ curl --location 'http://localhost:8080/jaxrscrud/api/products' \
 
 ### Update existing product
 
-```json
+```
 curl --location --request PUT 'http://localhost:8080/jaxrscrud/api/products/1' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -55,7 +59,7 @@ curl --location --request PUT 'http://localhost:8080/jaxrscrud/api/products/1' \
 
 ### Delete product
 
-```json
+```
 curl --location --request DELETE 'http://localhost:8080/jaxrscrud/api/products/1'
 ```
 
