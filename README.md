@@ -36,6 +36,12 @@ Navigate to the root directory of your wildfly server installation. Enter the `/
 curl --location 'http://localhost:8080/jaxrscrud/api/products'
 ```
 
+### List one product
+
+```
+curl --location 'http://localhost:8080/jaxrscrud/api/products/1'
+```
+
 ### Create new product
 ```
 curl --location 'http://localhost:8080/jaxrscrud/api/products' \
